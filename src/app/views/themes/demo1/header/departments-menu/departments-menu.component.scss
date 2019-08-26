@@ -1,0 +1,21 @@
+:host ::ng-deep {
+
+	.dropdown {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 30px;
+		margin-right: 50px;
+
+
+		.mat-select-value {
+			font-size: 16px;
+			color: #525672;
+		}
+
+		.mat-form-field-underline {
+			display: none;
+		}
+	}
+}
