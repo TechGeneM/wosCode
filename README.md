@@ -1,6 +1,11 @@
-# Metronic Angular
+# Access Solutions Weekly Online Schedule
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+This project was build with the Metronic Angular theme.
+
+## Installation
+
+Run `npm install`
 
 ## Development server
 
@@ -12,7 +17,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build --prod --aot=false` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
