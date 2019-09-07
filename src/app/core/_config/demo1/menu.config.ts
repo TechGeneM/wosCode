@@ -3,24 +3,31 @@ export class MenuConfig {
 		header: {
 			self: {},
 			items: [
-				{
-					title: 'Influenza',
-					root: true,
-					alignment: 'left',
-					page: 'dashboard',
-					translate: 'MENU.DASHBOARD',
-				},
+				// {
+				// 	title: 'Influenza',
+				// 	root: true,
+				// 	alignment: 'left',
+				// 	page: 'dashboard',
+				// 	translate: 'MENU.DASHBOARD',
+				// },
 			]
 		},
 		aside: {
 			self: {},
 			items: [
 				{
-					title: 'KPI',
+					title: 'Schedule',
+					root: true,
+					icon: 'la la-calendar',
+					page: '/schedule',
+					bullet: 'dot'
+				},
+				{
+					title: 'Metrics',
 					root: true,
 					icon: 'la la-bar-chart',
-					page: '/kpi',
-					translate: 'MENU.DASHBOARD',
+					page: '/metrics',
+					// translate: 'MENU.DASHBOARD',
 					bullet: 'dot',
 				},
 				{

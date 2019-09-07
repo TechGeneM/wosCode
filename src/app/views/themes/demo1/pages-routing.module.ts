@@ -14,8 +14,12 @@ const routes: Routes = [
 		canActivate: [AuthGuard],
 		children: [
 			{
-				path: 'kpi',
-				loadChildren: () => import('app/views/pages/kpi/kpi.module').then(m => m.KPIModule)
+				path: 'schedule',
+				loadChildren: () => import('app/views/pages/schedule/schedule.module').then(m => m.ScheduleModule)
+			},
+			{
+				path: 'metrics',
+				loadChildren: () => import('app/views/pages/metrics/metrics.module').then(m => m.MetricsModule)
 			},
 			{
 				path: 'roster',
@@ -38,8 +42,8 @@ const routes: Routes = [
 				loadChildren: () => import('app/views/themes/demo1/content/builder/builder.module').then(m => m.BuilderModule)
 			},
 			{path: 'error/:type', component: ErrorPageComponent},
-			{path: '', redirectTo: 'kpi', pathMatch: 'full'},
-			{path: '**', redirectTo: 'kpi', pathMatch: 'full'}
+			{path: '', redirectTo: 'metrics', pathMatch: 'full'},
+			{path: '**', redirectTo: 'metrics', pathMatch: 'full'}
 		]
 	},
 ];

@@ -4,6 +4,10 @@
 @import "~material-design-icons/iconfont/material-icons.css";
 @import "~highlight.js/styles/googlecode.css";
 
+body {
+	color: #575962;
+}
+
 // hide bootstrap dropdown arrow globally
 .dropdown-toggle::after {
 	display: none !important;

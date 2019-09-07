@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import {
 	MatAutocompleteModule,
 	MatButtonModule,
@@ -23,10 +24,12 @@ import {
 	MatSortModule,
 	MatTableModule,
 	MatTabsModule,
-	MatTooltipModule
+	MatTooltipModule,
+	MatExpansionModule,
+	MatFormFieldModule,
 } from '@angular/material';
 // NgBootstrap
-import { NgbDropdownModule, NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbTabsetModule, NgbTooltipModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Perfect Scrollbar
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 // Core module
@@ -72,6 +75,8 @@ import { WidgetModule } from './content/widgets/widget.module';
 // SVG inline
 import { InlineSVGModule } from 'ng-inline-svg';
 import { CartComponent } from './layout/topbar/cart/cart.component';
+
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
 	declarations: [
@@ -144,6 +149,16 @@ import { CartComponent } from './layout/topbar/cart/cart.component';
 		CartComponent,
 
 		ErrorComponent,
+		MatExpansionModule,
+		FormsModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatMenuModule,
+		MatIconModule,
+		MatButtonModule,
+		NgbModule,
+		DataTablesModule,
+		MatSelectModule
 	],
 	imports: [
 		CommonModule,
@@ -177,11 +192,14 @@ import { CartComponent } from './layout/topbar/cart/cart.component';
 		MatTabsModule,
 		MatTooltipModule,
 		MatDialogModule,
-
+		MatExpansionModule,
+		MatFormFieldModule,
 		// ng-bootstrap modules
 		NgbDropdownModule,
 		NgbTabsetModule,
 		NgbTooltipModule,
+		NgbModule,
+		DataTablesModule
 	]
 })
 export class PartialsModule {

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 // Core Module
 import { CoreModule } from '../../../core/core.module';
 import { PartialsModule } from '../../partials/partials.module';
-import { KPIComponent } from './kpi.component';
+import { MetricsComponent } from './metrics.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WorkCenterComponent } from './work-center/work-center.component';
 import { TeamComponent } from './team/team.component';
@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes = [
 	{
 		path: '',
-		component: KPIComponent,
+		component: MetricsComponent,
 		children: [
 			{
 				path: '',
@@ -45,10 +45,10 @@ const routes: Routes = [
 	],
 	providers: [],
 	declarations: [
-		KPIComponent,
+		MetricsComponent,
 		WorkCenterComponent,
 		TeamComponent
 	]
 })
-export class KPIModule {
+export class MetricsModule {
 }

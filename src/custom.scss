@@ -1,3 +1,10 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+
+body {
+	color: #575962;
+}
+
 .kt-header .kt-header__topbar .kt-header__topbar-item .kt-header__topbar-icon i {
 	font-size: 26px;
 	color: #2C2E3E !important;

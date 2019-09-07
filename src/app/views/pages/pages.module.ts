@@ -9,7 +9,6 @@ import { PartialsModule } from '../partials/partials.module';
 import { CoreModule } from '../../core/core.module';
 
 @NgModule({
-	declarations: [],
 	exports: [],
 	imports: [
 		CommonModule,

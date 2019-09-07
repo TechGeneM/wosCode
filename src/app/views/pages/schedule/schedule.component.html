@@ -1,0 +1,642 @@
+
+
+
+<div class="row">
+  <div class="col-12">
+    <div class="agent-information">
+      <div class="info">
+        <span class="title">Unix ID</span>
+        <span class="value">schruted</span>
+      </div>
+      <div class="info">
+        <span class="title">Home Pod</span>
+        <span class="value">01</span>
+      </div>
+      <div class="info">
+        <span class="title">Work Center</span>
+        <span class="value">Influenza RS</span>
+      </div>
+      <div class="info">
+        <span class="title">Therapeutic Area</span>
+        <span class="value">Influenza</span>
+      </div>
+      <div class="info">
+        <span class="title">Supervisor</span>
+        <span class="value">Michael Scott</span>
+      </div>
+      <div class="info">
+        <span class="title">Team</span>
+        <span class="value">PDX_Sup_01</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="schedule-wrapper">
+
+  <div class="schedule-header">
+    <div class="row">
+      <div class="col-4">
+        <div class="calendar-controls">
+
+
+
+						<form class="form-inline datepicker-wrapper">
+								<div class="form-group">
+									<div class="input-group">
+									<input class="form-control" placeholder="Today: Jan 31" name="dp" [(ngModel)]="weekPickerModel" ngbDatepicker #d="ngbDatepicker">
+									<div class="input-group-append">
+										<button class="btn btn-primary" (click)="d.toggle()" type="button">
+										<i class="la la-angle-down"></i>
+										</button>
+									</div>
+									</div>
+								</div>
+								</form>
+				</div>
+      </div>
+      <div class="col-4">
+        <div class="stats">
+          <div class="stat">
+            <span class="value">100%</span>
+            <span class="title">Utilization</span>
+            <ngb-progressbar type="success" [value]="100"></ngb-progressbar>
+          </div>
+          <div class="stat">
+            <span class="value">90%</span>
+            <span class="title">Attendance</span>
+            <ngb-progressbar type="success" [value]="90"></ngb-progressbar>
+          </div>
+          <div class="stat">
+            <span class="value">90%</span>
+            <span class="title">Proficiency</span>
+            <ngb-progressbar type="success" [value]="90"></ngb-progressbar>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+				<div class="right-buttons">
+						<button mat-button>Save</button>
+						<button mat-button>Submit Schedule</button>
+
+						<mat-menu #appMenu="matMenu">
+							<button mat-menu-item>Save as template</button>
+							<button mat-menu-item>Copy to the next week</button>
+							<button mat-menu-item>Copy to a selected week</button>
+							<button mat-menu-item>Clear all assignments</button>
+						</mat-menu>
+						<button mat-icon-button [matMenuTriggerFor]="appMenu">
+							<mat-icon>more_vert</mat-icon>
+						</button>
+				</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="schedule-details">
+
+    <div class="schedule-reports">
+      <!-- <mat-accordion> -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Reports
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <table datatable [dtOptions]="reportsTableOptions">
+            <thead>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-head">Throughput Plan</td>
+                <td>
+                  60 BI
+                </td>
+                <td>
+                  60 BI
+                </td>
+                <td>
+                  60 BI
+                </td>
+                <td>
+                  60 BI
+                </td>
+                <td>
+                  60 BI
+                </td>
+                <td>
+                  --
+                </td>
+                <td>
+                  --
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">Utilization</td>
+                <td>
+                  100%
+                </td>
+                <td>
+                  100%
+                </td>
+                <td>
+                  100%
+                </td>
+                <td>
+                  100%
+                </td>
+                <td>
+                  100%
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">Available Hours</td>
+                <td>
+                  9
+                </td>
+                <td>
+                  9
+                </td>
+                <td>
+                  8
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">OT Hours</td>
+                <td>
+                  2
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">Production Pod</td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+                <td>
+										<div class="table-blank">--</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Staff Pooling/Rotation
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <table datatable [dtOptions]="reportsTableOptions">
+            <thead>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-head">Type</td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">Supervisor</td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">Pod</td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">Work Center</td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-head">Therapeutic Area</td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-select placeholder="Select">
+                      <mat-option>Select</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+                <td>
+                  <div class="table-blank">--</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-expansion-panel>
+      <!-- </mat-accordion> -->
+    </div>
+
+
+
+  </div>
+
+  <div class="calendar-wrapper">
+    <full-calendar
+        #calendar
+        defaultView="timeGridWeek"
+        [defaultDate]="TODAY"
+        [plugins]="calendarPlugins"
+        [events]="events"
+        [editable]="true"
+        [firstDay]="1"
+        slotDuration="00:05:00"
+        slotLabelInterval="00:60:00"
+        minTime="05:00:00"
+        maxTime="18:30:00"
+        (eventResize)="handleEventResize($event)"
+        [nowIndicator]="true"
+        height="auto"
+        header="{left: '', center: '', right: ''}"
+        [allDaySlot]="false"
+        (viewSkeletonRender)="handleSkeletonRender($event)"
+        aspectRatio="3"
+        [eventOverlap]="false"
+        (eventRender)="handleEventRender($event)"
+		(eventClick)="handleEventClick($event)"
+		defaultTimedEventDuration="00:10"
+        >
+
+        </full-calendar>
+  </div>
+
+
+</div>
+
+
+
