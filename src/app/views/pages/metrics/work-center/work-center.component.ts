@@ -18,7 +18,26 @@ function formatInnerTable(table_id) {
 		<div class="tab" data-target="#tableTab_time_${table_id}">Time Allocation (Hrs)</div>
 	</div>
 	<div class="inner-table-wrapper">
+		<div class="date-control">
+			<div class="date-prev">
+				<i class="la la-angle-left"></i>
+			</div>
+			<div class="date-next">
+				<i class="la la-angle-right"></i>
+			</div>
 
+			<div class="date-today">
+				today
+			</div>
+
+			<div class="current-date">
+				AUG 12 - 17, 2019
+			</div>
+		</div>
+
+		<div class="capacity">
+			Capacity <span>90</span>
+		</div>
 
 		<div class="tables" id="innerTables_${table_id}">
 			<div class="table-tab" id="tableTab_week_${table_id}" style="display: none;">
@@ -171,11 +190,11 @@ export class WorkCenterComponent implements OnInit {
 						previous: '<i class="la la-angle-left"></i>'
 					}
 				},
-				// dom: 'Bfrtip',
-				// buttons: [
-				// 	'colvis',
-				// 	'copy'
-				// ],
+				dom: 'Bfrtip',
+				buttons: [
+					'colvis',
+					'copy'
+				],
 				columns: [{
 					title: 'Date',
 					data: 'date'
@@ -232,6 +251,11 @@ export class WorkCenterComponent implements OnInit {
 						previous: '<i class="la la-angle-left"></i>'
 					}
 				},
+				dom: 'Bfrtip',
+				buttons: [
+					'colvis',
+					'copy'
+				],
 				columns: [{
 					title: 'Team',
 					data: 'team'
@@ -297,6 +321,11 @@ export class WorkCenterComponent implements OnInit {
 						previous: '<i class="la la-angle-left"></i>'
 					}
 				},
+				dom: 'Bfrtip',
+				buttons: [
+					'colvis',
+					'copy'
+				],
 				columns: [{
 					title: 'Location',
 					data: 'location'
@@ -353,6 +382,11 @@ export class WorkCenterComponent implements OnInit {
 						previous: '<i class="la la-angle-left"></i>'
 					}
 				},
+				dom: 'Bfrtip',
+				buttons: [
+					'colvis',
+					'copy'
+				],
 				columns: [{
 					title: 'Pod',
 					data: 'pod'
@@ -409,6 +443,11 @@ export class WorkCenterComponent implements OnInit {
 						previous: '<i class="la la-angle-left"></i>'
 					}
 				},
+				dom: 'Bfrtip',
+				buttons: [
+					'colvis',
+					'copy'
+				],
 				columns: [{
 					title: 'Team',
 					data: 'team'

@@ -89,5 +89,24 @@
 
 			}
 		}
+
+
+
+		.capacity {
+			position: absolute;
+			right: 20px;
+			top: 23px;
+			font-size: 16px;
+			font-weight: 600;
+
+			> span {
+				background: #00C5DC;
+				display: inline-block;
+				padding: 5px 20px;
+				border-radius: 16px;
+				color: white;
+				font-weight: 400;
+			}
+		}
 	}
 }

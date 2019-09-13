@@ -40,21 +40,24 @@
     <div class="row">
       <div class="col-4">
         <div class="calendar-controls">
+					<div class="date-control">
+						<div class="date-prev">
+							<i class="la la-angle-left"></i>
+						</div>
+						<div class="date-next">
+							<i class="la la-angle-right"></i>
+						</div>
+
+						<div class="date-today">
+							today
+						</div>
+
+						<div class="current-date">
+							SEP 09 - 14, 2019
+						</div>
+					</div>
 
 
-
-						<form class="form-inline datepicker-wrapper">
-								<div class="form-group">
-									<div class="input-group">
-									<input class="form-control" placeholder="Today: Jan 31" name="dp" [(ngModel)]="weekPickerModel" ngbDatepicker #d="ngbDatepicker">
-									<div class="input-group-append">
-										<button class="btn btn-primary" (click)="d.toggle()" type="button">
-										<i class="la la-angle-down"></i>
-										</button>
-									</div>
-									</div>
-								</div>
-								</form>
 				</div>
       </div>
       <div class="col-4">
@@ -628,8 +631,8 @@
         aspectRatio="3"
         [eventOverlap]="false"
         (eventRender)="handleEventRender($event)"
-		(eventClick)="handleEventClick($event)"
-		defaultTimedEventDuration="00:10"
+        (eventClick)="handleEventClick($event)"
+        defaultTimedEventDuration="00:10"
         >
 
         </full-calendar>

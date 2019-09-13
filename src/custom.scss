@@ -53,7 +53,8 @@ body {
 .tableWrapper {
 	background-color: #FFFFFF;
 	box-shadow: 0 1px 15px 0 rgba(69,65,78,0.08);
-
+	overflow-x: scroll;
+	overflow-y: hidden;
 
 	.titleRow {
 		padding: 24px 30px;
@@ -164,8 +165,58 @@ body {
 		background-color: #FFFFFF;
 		box-shadow: 0 15px 60px 0 rgba(33,31,65,0.2);
 		padding: 14px;
+		position: relative;
 		table {
 			padding: 0;
+		}
+
+		.dt-buttons {
+			position: absolute;
+			right: 160px;
+			top: -60px;
+
+			.dt-button-collection {
+				width: 100%;
+				box-shadow: 0 15px 60px 0 rgba(33,31,65,0.2);
+
+
+			}
+			button.dt-button.buttons-collection.buttons-colvis {
+				outline: none;
+				border: none;
+				padding: 10px 16px;
+				border-radius: 4px;
+				background-color: #716ACA;
+				color: white;
+			}
+
+			button.dt-button.buttons-columnVisibility {
+				background: white;
+				outline: none;
+				border: none;
+				text-align: left;
+				padding: 10px 5px;
+				width: 100%;
+
+				&:before {
+					content: "\f18a";
+					display: inline-block;
+					font: normal normal normal 16px/1 "LineAwesome";
+					font-size: inherit;
+					text-decoration: inherit;
+					text-rendering: optimizeLegibility;
+					text-transform: none;
+					-moz-osx-font-smoothing: grayscale;
+					-webkit-font-smoothing: antialiased;
+				}
+
+				&.active {
+					&:before {
+						content: "\f17c";
+					}
+				}
+			}
+
 		}
 	}
 
@@ -192,3 +243,43 @@ body {
 		}
 	}
 }
+
+
+
+.date-control {
+	margin-bottom: 24px;
+	.date-prev, .date-next {
+		background-color: #F4F5F8;
+		display: inline-block;
+		margin: 0;
+		padding: 10px 16px;
+		line-height: 20px;
+		cursor: pointer;
+	}
+	.date-prev {
+		border-radius: 4px 0 0 4px;
+
+	}
+	.date-next {
+		border-radius: 0 4px 4px 0;
+
+	}
+	.date-today {
+		cursor: pointer;
+		background-color: #F4F5F8;
+		border-radius: 4px;
+		margin: 0px 20px;
+		display: inline-block;
+		padding: 10px 16px;
+		line-height: 20px;
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.current-date {
+		font-size: 18px;
+		font-weight: 500;
+		display: inline-block;
+
+	}
+}
+
