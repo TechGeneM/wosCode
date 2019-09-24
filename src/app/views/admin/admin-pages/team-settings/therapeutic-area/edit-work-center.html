@@ -1,0 +1,152 @@
+<div class="container">
+    <div class="row">
+        <!-- <h4 style="margin-left: 3Rem">Edit Work Center</h4> -->
+        <div style="margin:40px;">
+            <p style="margin-left: 2.8Rem;font-size: 15px;font-weight: bold">Edit Work Center</p>
+            <form [formGroup]="userAddressValidations">
+                <ul style="display: inline-flex;">
+                    <li style="width: 15Rem; margin-right: 4rem;">
+                        <mat-form-field class="dropdown">
+                            <mat-label class="label">Agent Role</mat-label>
+                            <!-- <mat-select formControlName="agentrole" style="font-size: 13px;color: #525672;">
+                                <mat-option *ngFor="let arole of agentRoleViewDataArray" [value]="arole">
+                                    {{arole.agentRole}}</mat-option>
+                            </mat-select> -->
+                            <input matInput disabled style="font-size: 13px;color: #525672;" formControlName="agentrole"
+                                [(ngModel)]="localData.agentRoleName">
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Unit of Work</mat-label>
+                            <mat-select required formControlName="unitofwork" [(ngModel)]="localData.unitofWork"
+                                style="font-size: 13px;color: #525672;">
+                                <mat-option value="Fax (Fax/Hr)">Fax (Fax/Hr)</mat-option>
+                                <mat-option value="Activity (ACT/Hr)">Activity (ACT/Hr)</mat-option>
+                                <mat-option value="BI (BI/Hr)">BI (BI/Hr)</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="userAddressValidations.get('unitofwork').hasError('required')">
+                                Unit of Work is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Target Utilization</mat-label>
+                            <input matInput required style="font-size: 13px;color: #525672;"
+                                formControlName="utilization" [(ngModel)]="localData.targetUtilization">
+                            <mat-error *ngIf="userAddressValidations.get('utilization').hasError('required')">
+                                Target Utilization is required
+                            </mat-error>
+
+                            <mat-error *ngIf="userAddressValidations.get('utilization').hasError('pattern')">
+                                Percentage must be 1-100%.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Target Attendance</mat-label>
+                            <input matInput required style="font-size: 13px;color: #525672;"
+                                formControlName="attendance" [(ngModel)]="localData.targetAttendance">
+                            <mat-error *ngIf="userAddressValidations.get('attendance').hasError('required')">
+                                Target Attendance is required
+                            </mat-error>
+
+                            <mat-error *ngIf="userAddressValidations.get('attendance').hasError('pattern')">
+                                Percentage must be 1-100%.
+                            </mat-error>
+
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Shift Length</mat-label>
+                            <mat-select required formControlName="shiftlength" [(ngModel)]="localData.shiftLength"
+                                style="font-size: 13px;color: #525672;">
+                                <mat-option value="8">8</mat-option>
+                                <mat-option value="9">9</mat-option>
+                                <mat-option value="10">10</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Threshold OT</mat-label>
+                            <mat-select required formControlName="threshold" [(ngModel)]="localData.thresholdOT"
+                                style="font-size: 13px;color: #525672;">
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <p style="color: red;">{{errormessage}}</p>
+                    </li>
+                    <li style="margin-left:3Rem; width: 60%">
+                        <div style="display: inline-flex">
+                            <p style="margin-left: 0.5Rem; font-size: 13px;font-weight: bold">Pods</p>
+                            <p style="margin-left: 80%; margin-right: 0.5Rem; font-size: 13px;font-weight: bold">Total&nbsp;{{podLength}}</p>
+                        </div>
+
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                            <!-- <ng-container matColumnDef="select">
+                                <th mat-header-cell *matHeaderCellDef>
+                                    <mat-checkbox color="warn" (change)="$event ? masterToggle() : null"
+                                        [checked]="selection.hasValue() && isAllSelected()"
+                                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                                    </mat-checkbox>
+                                </th>
+                                <td mat-cell *matCellDef="let row">
+                                    <mat-checkbox color="warn" (click)="$event.stopPropagation()"
+                                        (change)="$event ? selection.toggle(row) : null"
+                                        [checked]="selection.isSelected(row)">
+                                    </mat-checkbox>
+                                </td>
+                            </ng-container> -->
+
+                            <ng-container matColumnDef="POD ID">
+                                <th style="text-align: left;" mat-header-cell *matHeaderCellDef> Pod ID </th>
+                                <td style="text-align: left;" mat-cell *matCellDef="let item"> POD{{item.PODID}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Target production Rate">
+                                <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Target production
+                                    Rate</th>
+                                <td style="text-align: center;" mat-cell *matCellDef="let item">
+                                    <div style="display: inline-flex;">
+                                            <input matInput style="font-size: 13px;color: #525672;" formControlName="targetPR"
+                                            [(ngModel)]="item.targetProductionRate">
+                                            <p style="font-size: 13px;color: #525672;">{{localData.unitofWork}}</p>
+                                    </div>
+                                    
+                                    </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Actions">
+                                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                                    <button mat-icon-button (click)="addElement()" matTooltip="Add POD"
+                                        style="color: #e0817f">
+                                        <i class="material-icons">add_circle</i>
+                                    </button>
+                                </th>
+                                <td style="text-align: center;" mat-cell *matCellDef="let item">
+                                    <button *ngIf="item.PODID === podLength && item.PODID > 1" mat-icon-button
+                                        (click)="deleteElement(item)" matTooltip="Delete POD" style="color: #e0817f">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                        <br>
+                    </li>
+                </ul>
+                <div>
+                    <button style="background-color: #e0817f;color: white;margin-left: 15Rem" class="form-group"
+                        (click)="onSubmit(userAddressValidations)" mat-raised-button color="warn">Submit</button>
+
+                    <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

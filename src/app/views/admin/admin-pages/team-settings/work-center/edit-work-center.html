@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="row">
+        <h4 style="margin-left: 3Rem">Edit Work Center</h4>
+        <div style="margin:40px;">
+            <form [formGroup]="userAddressValidations" (ngSubmit)="onSubmit(userAddressValidations)">
+                <ul>
+                    <li style="width: 20Rem">
+                        <mat-form-field class="dropdown">
+                            <mat-label class="label">Agent Role</mat-label>
+                            <mat-select [(value)]="selected" style="font-size: 13px;color: #525672;">
+                                <mat-option value="Reimbursement Specialist">Reimbursement Specialist</mat-option>
+                                <mat-option value="Case Manager">Case Manager</mat-option>
+                                <mat-option value="	Intake coordinator"> Intake coordinator</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Unit of Work</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Target Utilization</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Target Attendance</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Shift Length</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Threshold OT</mat-label>
+                            <input matInput required>
+                        </mat-form-field>
+                    </li>
+                    <li style="margin-left:5Rem;margin-top: 0px">
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                            <ng-container matColumnDef="select">
+                                <th mat-header-cell *matHeaderCellDef>
+                                    <mat-checkbox color="warn" (change)="$event ? masterToggle() : null"
+                                        [checked]="selection.hasValue() && isAllSelected()"
+                                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                                    </mat-checkbox>
+                                </th>
+                                <td mat-cell *matCellDef="let row">
+                                    <mat-checkbox color="warn" (click)="$event.stopPropagation()"
+                                        (change)="$event ? selection.toggle(row) : null"
+                                        [checked]="selection.isSelected(row)">
+                                    </mat-checkbox>
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="POD ID">
+                                <th mat-header-cell *matHeaderCellDef> POD ID </th>
+                                <td mat-cell *matCellDef="let item"> POD{{item.PODID}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Target production Rate">
+                                <th mat-header-cell *matHeaderCellDef> Target production Rate </th>
+                                <td mat-cell *matCellDef="let item"> {{item.targetProductionRate}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Actions">
+                                <th mat-header-cell *matHeaderCellDef>
+                                    <button mat-icon-button (click)="addElement()" matTooltip="Add POD">
+                                        <mat-icon color="warn">add</mat-icon>
+                                    </button>
+                                </th>
+                                <td mat-cell *matCellDef="let item">
+                                    <button mat-icon-button (click)="deleteElement(item)" matTooltip="Delete POD">
+                                        <mat-icon color="warn">delete</mat-icon>
+                                    </button>
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                        <br>
+                    </li>
+                </ul>
+                <div>
+                    <button style="background-color: #e0817f;color: white;margin-left: 18Rem" class="form-group" mat-raised-button
+                        color="warn">Submit</button>
+
+                    <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<!-- main app container -->
+
+<div class="container">
+    <div class="row">
+        <div style="margin-right: 50px;margin:40px;overflow:hidden">
+            <p style="font-size: 15px;font-weight: bold;margin-top: 0px">Edit Agent Type</p>
+            <form [formGroup]="userAddressValidations" (ngSubmit)="onSubmit(userAddressValidations)">
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label> Agent Type</mat-label>
+                        <input matInput formControlName="Type" [(ngModel)]="localData.agentType">
+                        <mat-error *ngIf="userAddressValidations.get('Type').hasError('required')">
+                            Agent Type is required
+                        </mat-error>
+                        <mat-error *ngIf="userAddressValidations.get('Type').hasError('pattern')">
+                            Special characters/Numbers are not allowed
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <br>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label> Description</mat-label>
+                        <input matInput formControlName="Description" [(ngModel)]="localData.description">
+                        <mat-error *ngIf="userAddressValidations.get('Description').hasError('required')">
+                            Description is required
+                        </mat-error>
+                        <!-- <mat-error *ngIf="userAddressValidations.get('Description').hasError('pattern')">
+                            Special characters/Numbers are not allowed
+                        </mat-error> -->
+                    </mat-form-field>
+                </div>
+                <br>
+                <p style="color:green">{{errormessage}}</p>
+                <div>
+                    <button style="background-color: #e0817f;color: white" class="form-group" mat-raised-button
+                        color="warn">Save</button>
+
+                    <button style="margin-left:2Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

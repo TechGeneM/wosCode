@@ -1,0 +1,56 @@
+.navbar{
+    justify-content: space-between;
+}
+
+span{
+    padding-right: 2em;
+}
+h6{
+    font-size: 0.7Rem;
+    padding: 0.4Rem;
+    font-weight: bold;
+}
+mat-drawer-container{
+    height:90%;
+}
+mat-drawer , mat-drawer-content{
+    padding:20px;
+}
+mat-drawer-content {
+    background-color: #f9f6f2;
+}
+mat-drawer{
+    background-color:#404040;
+    width:200px;
+}
+
+h6:focus{
+    outline: 0 !important;
+}
+
+button:focus 
+{
+    outline:0 !important;
+}
+h6 :visited {
+    color: red;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.pointer :hover{
+    color: #e0817f;
+}
+
+.pointer:active {
+    color: #e0817f;
+}
+/* .logo{
+    color: #575962;
+    font-size:24px;
+} */
+.userscontainer{
+    display: flex;
+    font-size:16px;
+}

@@ -1,0 +1,33 @@
+table {
+	width: 100%;
+}
+th{
+	font-size :13px;
+	background-color: #e6e6e6;
+    color:  #333333;
+	/* padding-right: 0.5Rem;
+	padding-left: 0.5Rem; */
+	width: fit-content;
+}
+td{
+	/* padding-left: 0.5Rem;
+	padding-right: 0.5Rem; */
+	font-size:13px;
+	width: fit-content;
+}
+
+button:focus 
+{
+    outline:0;
+}
+
+.btn:hover {
+    background-color: #69cad7;
+}
+
+.btn-icon:hover {
+    color: #69cad7;
+}
+.btn-icon:active {
+    color: #69cad7;
+}

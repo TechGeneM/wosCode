@@ -1,0 +1,76 @@
+<!-- main app container -->
+
+<div class="container">
+    <div class="row">
+        <div style="margin-top:0px;margin:40px;overflow:hidden">
+            <h4 style="margin-top: 0px;font-size: 15px;font-weight: bold" cdkFocusInitial>Add Work Center</h4>
+            <form [formGroup]="userAddressValidations" (ngSubmit)="onSubmit(userAddressValidations)">      
+                <mat-form-field class="dropdown">
+                    <mat-label class="label">Agent Role</mat-label>
+                    <mat-select formControlName="agentrole" style="font-size: 13px;color: #525672;">
+                        <mat-option *ngFor="let arole of agentRoleViewDataArray" [value]="arole">{{arole.agentRole}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <mat-label>Unit of Work</mat-label>
+                    <input matInput required formControlName="unitofwork">
+                    <mat-error *ngIf="userAddressValidations.get('unitofwork').hasError('required')">
+                            Unit of Work is required
+                        </mat-error>
+    
+                        <mat-error *ngIf="userAddressValidations.get('unitofwork').hasError('pattern')">
+                            Special characters/Numbers are not allowed
+                        </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Target Utilization</mat-label>
+                    <input matInput required formControlName="utilization">
+                    <mat-error *ngIf="userAddressValidations.get('utilization').hasError('required')">
+                           Target Utilization is required
+                        </mat-error>
+    
+                        <mat-error *ngIf="userAddressValidations.get('utilization').hasError('pattern')">
+                            Percentage must be 1-100%.
+                        </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Target Attendance</mat-label>
+                    <input matInput required formControlName="attendance">
+                    <mat-error *ngIf="userAddressValidations.get('attendance').hasError('required')">
+                            Target Attendance is required
+                        </mat-error>
+    
+                        <mat-error *ngIf="userAddressValidations.get('attendance').hasError('pattern')">
+                            Percentage must be 1-100%.
+                        </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <mat-label>Shift Length</mat-label>
+                    <mat-select formControlName="shiftlength" style="font-size: 13px;color: #525672;">
+                            <mat-option value="8">8</mat-option>
+                            <mat-option value="9">9</mat-option>
+                            <mat-option value="10">10</mat-option>
+                        </mat-select>
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <mat-label>Threshold OT</mat-label>
+                    <mat-select formControlName="threshold" style="font-size: 13px;color: #525672;">
+                            <mat-option value="1">1</mat-option>
+                            <mat-option value="2">2</mat-option>
+                        </mat-select>
+                </mat-form-field>
+
+                <p style = "color: red;">{{errormessage}}</p>
+                <div>
+                    <button style="background-color: #e0817f;color: white" class="form-group" mat-raised-button color="warn" >Submit</button>
+
+                    <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

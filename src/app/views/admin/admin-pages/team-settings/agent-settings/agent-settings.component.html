@@ -1,0 +1,23 @@
+<br>
+<br>
+<!-- <mat-tab-group animationDuration="0ms" color="warn">
+    <mat-tab label="Agent Role" active>
+        <app-agent-role></app-agent-role>
+    </mat-tab>
+    <mat-tab label="Agent Type">
+        <app-agent-type></app-agent-type>
+    </mat-tab>
+</mat-tab-group> -->
+
+<ngb-tabset type="pills">
+    <ngb-tab title="Agent Role">
+        <ng-template ngbTabContent>
+            <app-agent-role></app-agent-role>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Agent Type">
+        <ng-template ngbTabContent>
+            <app-agent-type></app-agent-type>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>

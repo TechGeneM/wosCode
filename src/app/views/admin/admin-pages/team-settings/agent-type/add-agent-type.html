@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div style="margin:40px;margin-top: 1Rem;overflow:hidden">
+      <p style="font-size: 15px;font-weight: bold" cdkFocusInitial>Add Agent Type</p>
+      <form [formGroup]="userAddressValidations" (ngSubmit)="onSubmit(userAddressValidations)">
+        <div class="form-group">
+          <mat-form-field>
+            <mat-label style="font-size: 14px"> New Agent Type</mat-label>
+            <input matInput formControlName="Type" style="width:100%" required>
+            <mat-error *ngIf="userAddressValidations.get('Type').hasError('required')">
+              <span style="font-size: 13px">Agent Type is required</span>
+            </mat-error>
+
+            <mat-error *ngIf="userAddressValidations.get('Type').hasError('pattern')">
+              <span style="font-size: 13px">Special characters/Numbers are not allowed</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <mat-label style="font-size: 15px"> Description</mat-label>
+          <input matInput style="width:100%" formControlName="Description">
+          <mat-error *ngIf="userAddressValidations.get('Description').hasError('required')">
+            <span style="font-size: 13px">Description is required</span>
+          </mat-error>
+
+          <!-- <mat-error *ngIf="userAddressValidations.get('Description').hasError('pattern')">
+            <span style="font-size: 13px"> Special characters/Numbers are not allowed</span>
+          </mat-error> -->
+        </mat-form-field>
+        <br>
+        <br>
+        <p style="color: red;">{{errormessage}}</p>
+        <div>
+          <button style="background-color: #e0817f;color: white" class="form-group" mat-raised-button
+           color="warn">Submit</button>
+
+          <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+            (click)="onNoClick()" type="button">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<!-- main app container -->
+
+<div class="container">
+    <div class="row">
+        <div style="margin:40px;margin-top: 1Rem;overflow:hidden">
+            <p style="font-size: 15px;font-weight: bold;margin-bottom: 10px" cdkFocusInitial>Add Agent Role</p>
+            <form [formGroup]="userAddressValidations" (ngSubmit)="onSubmit(userAddressValidations)">
+                <mat-form-field>
+                    <mat-label style="font-size: 14px"> New Agent Role</mat-label>
+                    <input matInput formControlName="Role" style="width:100%" required>
+                    <mat-error *ngIf="userAddressValidations.get('Role').hasError('required')">
+                        <span style="font-size: 13px">Agent Role is required</span>
+                    </mat-error>
+
+                    <mat-error *ngIf="userAddressValidations.get('Role').hasError('pattern')">
+                        <span style="font-size: 13px">Special characters/Numbers are not allowed</span>
+                    </mat-error>
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field>
+                    <mat-label style="font-size: 14px"> Description</mat-label>
+                    <input matInput formControlName="Description" style="width:100%">
+                    <mat-error *ngIf="userAddressValidations.get('Description').hasError('required')">
+                        <span style="font-size: 13px">Description is required</span>
+                    </mat-error>
+                    <!-- <mat-error *ngIf="userAddressValidations.get('Description').hasError('pattern')">
+                        <span style="font-size: 13px">Special characters/Numbers are not allowed</span>
+                    </mat-error> -->
+                </mat-form-field>
+                <br>
+                <br>
+                <p style="color: red;font-size: 13px">{{errormessage}}</p>
+                <div>
+                    <button style="background-color: #e0817f;color: white" class="form-group"
+                        mat-raised-button>Submit</button>
+
+                    <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

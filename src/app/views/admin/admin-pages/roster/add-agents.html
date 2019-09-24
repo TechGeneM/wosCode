@@ -1,0 +1,184 @@
+<!-- main app container -->
+<p style="margin-left: 2.7Rem;font-size: 15px;font-weight: bold;margin-bottom: 10px" cdkFocusInitial>Add New Agent</p>
+<div class="container">
+    <div class="row">
+        <div style="margin-left: 2Rem;overflow:auto">
+            <form [formGroup]="agentValidations" (ngSubmit)="onSubmit(agentValidations)">
+                <div class="form-group">
+                    <ul>
+                        <li>
+                            <mat-form-field>
+                                <mat-label style="font-size: 14px"> First Name </mat-label>
+                                <input matInput formControlName="firstName" style="width:100px">
+                                <mat-error *ngIf="agentValidations.get('firstName').hasError('required')">
+                                    <span style="font-size: 13px">First Name is required</span>
+                                </mat-error>
+                                <mat-error *ngIf="agentValidations.get('firstName').hasError('pattern')">
+                                    <span style="font-size: 13px">Special characters/Numbers are not allowed</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </li>
+                        <li>
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Team</mat-label>
+                                <br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                        <li>
+                            <mat-form-field>
+                                <mat-label style="font-size: 14px"> Last Name </mat-label>
+                                <input matInput formControlName="lastName" style="width:100px">
+                                <mat-error *ngIf="agentValidations.get('lastName').hasError('required')">
+                                    <span style="font-size: 13px">Last Name is required</span>
+                                </mat-error>
+                                <mat-error *ngIf="agentValidations.get('lastName').hasError('pattern')">
+                                    <span style="font-size: 13px">Special characters/Numbers are not allowed</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </li>
+                        <li style="margin-bottom: 0.2Rem">
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Home Pod</mat-label><br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                        <li>
+                            <mat-form-field>
+                                <mat-label style="font-size: 14px"> Unix ID </mat-label>
+                                <input matInput formControlName="unixId" style="width:100px">
+                                <mat-error *ngIf="agentValidations.get('unixId').hasError('required')">
+                                    <span style="font-size: 13px">Unix ID is required</span>
+                                </mat-error>
+                                <mat-error *ngIf="agentValidations.get('unixId').hasError('pattern')">
+                                    <span style="font-size: 13px">Special characters are not allowed</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </li>
+                        <li style="margin-bottom: 0.2Rem">
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Shift</mat-label>
+                                <br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                        <li>
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Proficiency %</mat-label>
+                                <br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                        <li style="margin-bottom: 0.3Rem">
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Role</mat-label>
+                                <br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                        <li>
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Supervisor</mat-label><br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                        <li style="margin-bottom: 0.3Rem">
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Location</mat-label>
+                                <br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>                       
+                        <li>
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Therapeutic Area</mat-label>
+                                <br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                        <li style="margin-bottom: 0.3Rem">
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Payroll Type</mat-label>
+                                <br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>                      
+                        <li>
+                            <!-- <mat-form-field class="dropdown"> -->
+                                <mat-label class="label" style="font-size: 14px">Work Center</mat-label><br>
+                                <mat-select [(value)]="selected" style="font-size: 13px;background-color: #eef0f1;">
+                                    <mat-option value="all">All</mat-option>
+                                    <mat-option value="Influenza">Influenza</mat-option>
+                                    <mat-option value="HemeOnc">HemeOnc</mat-option>
+                                    <mat-option value="Hemophilia">Hemophilia</mat-option>
+                                    <mat-option value="Lytics">Lytics</mat-option>
+                                </mat-select>
+                            <!-- </mat-form-field> -->
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button style="background-color:#e0817f;color:white;margin-left:16Rem" mat-raised-button
+                        class="form-group" (click)="onAddAgent()" class="btn">Submit</button>
+
+                    <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

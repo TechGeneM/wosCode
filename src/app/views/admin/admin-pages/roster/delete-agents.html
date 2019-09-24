@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div style="margin-top: 0px;margin:30px">
+            <p style="font-size: 15px;font-weight: bold;margin-bottom: 20px">Delete Agent</p>
+            <div class="form-group">
+                <p style="font-size: 14px">Are you sure to delete Agent <span style="font-weight: bold">
+                        "{{localData.firstName}}&nbsp;{{localData.lastName}}"</span>
+                </p>
+            </div>
+            <!-- <p style="color:red; text-align: center;">{{referenceMessage}}</p> -->
+            <br>
+            <div>
+                <button style="margin-left: 3Rem;background-color: #e0817f;color: white" class="form-group"
+                    mat-raised-button (click)="deleteAgent()" color="warn">Delete</button>
+                <button style="margin-left:2Rem;background-color:#ffae00;color:white;" mat-raised-button
+                    (click)="onNoClick()" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

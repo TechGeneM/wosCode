@@ -1,0 +1,41 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './views/auth/login/login.component';
+import { LogoutComponent } from './views/auth/logout/logout.component';
+import { AuthService } from './core/auth/_services/auth.service';
+import { AdminModule } from './views/admin/admin.module';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UnauthorizedComponent } from './views/auth/unauthorized/unauthorized.component';
+import { SupervisorLayoutComponent } from './views/supervisor/supervisor-layout/supervisor-layout.component';
+import { AgentLayoutComponent } from './views/agent/agent-layout/agent-layout.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    LogoutComponent,
+    UnauthorizedComponent,
+    SupervisorLayoutComponent,
+    AgentLayoutComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AdminModule,
+    MatProgressSpinnerModule,
+    HttpClientModule,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+  providers: [AuthService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

@@ -1,0 +1,131 @@
+<div style="padding: 10px">
+    <br>
+    <!-- <h2 class="kt-portlet__head-title" style="display: inline;margin:1Rem;color: black;font-weight:bold;font-size:large;color: #48465b">Schedule Settings</h2> -->
+    <button style="float: right;background-color: #e0817f;" color="warn" mat-raised-button
+        (click)="addTherapeutic(workcenterByTaDataArray)" type="button">Add
+        New</button>
+    <mat-form-field style="float:right;margin-right: 2Rem">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+</div>
+
+<br>
+
+<table mat-table multiTemplateDataRows [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Arrow">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let item">
+            <button mat-icon-button style="background: none; border: none; outline: 0"
+                (click)="expandedElement = expandedElement === item ? null : item"><i class="material-icons"
+                    style="cursor: pointer; color:#69cad7;font-weight: bold;">arrow_right</i></button>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Therapeutic Area">
+        <th mat-header-cell *matHeaderCellDef>Therapeutic Area</th>
+        <td mat-cell *matCellDef="let item"> {{item.taname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Count">
+        <th style="text-align: center;" mat-header-cell *matHeaderCellDef>Work Centers</th>
+        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.workcenterCount}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Settings">
+        <th mat-header-cell *matHeaderCellDef> Settings </th>
+        <td mat-cell *matCellDef="let item">
+            <button class="btn-icon" mat-icon-button [matMenuTriggerFor]="actions" matTooltip="settings">
+                <mat-icon>settings</mat-icon>
+            </button>
+            <mat-menu #actions="matMenu">
+                <button class="btn" mat-menu-item (click)="editTherapeutic(item)">Edit</button>
+                <button class="btn" mat-menu-item (click)="deleteTherapeutic(item)">Delete</button>
+            </mat-menu>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+            <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                <table mat-table [dataSource]="workcenterdataSource" class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="workcenter">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Work Center </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.workCenterName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="AgentRole">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Agent Role </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.agentRoleName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="UnitOfWork">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Unit Of Work </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.unitofWork}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="tagetUtilization">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Taget Utilization </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.targetUtilization}}
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="targetAttendance">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Target Attendance </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.targetAttendance}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="shiftLength">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> ShiftLength </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.shiftLength}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="pods">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Pods </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> 3 </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="thresholdOT">
+                        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Threshold OT </th>
+                        <td style="text-align: center;" mat-cell *matCellDef="let item"> {{item.thresholdOT}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Settings">
+                        <th mat-header-cell *matHeaderCellDef> Settings </th>
+                        <td mat-cell *matCellDef="let item">
+                            <button class="btn-icon" mat-icon-button [matMenuTriggerFor]="actions"
+                                matTooltip="settings">
+                                <mat-icon>settings</mat-icon>
+                            </button>
+                            <mat-menu #actions="matMenu">
+                                <button class="btn" mat-menu-item (click)="editWorkCenter(item)">Edit</button>
+                                <button class="btn" mat-menu-item (click)="deleteWorkCenter(item)">Delete</button>
+                            </mat-menu>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <br>
+                <button
+                    style="width: 100%;padding: 15px;border: dashed;border-color: lightgray;background-color: #f9f6f2;cursor: pointer;color: #69cad7"
+                    (click)="addWorkCenter(element)"> <mat-icon>add_circle</mat-icon> &nbsp; Add New</button>
+                <br><br>
+
+                <!-- <mat-paginator #workcenterpaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+            </div>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element" (click)="getElement(element)">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+<br>
+<br>

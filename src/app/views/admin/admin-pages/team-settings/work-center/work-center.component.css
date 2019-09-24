@@ -1,0 +1,27 @@
+table 
+{
+    width: 100%;
+}
+th
+{
+	font-size :12px;
+    background-color: #e6e6e6;
+    color:  #333333;
+    border: transparent
+}
+td
+{
+    font-size:13px;
+    background-color: #f9f6f2;
+}
+
+.btn:hover {
+    background-color: #69cad7;
+}
+
+.btn-icon:hover {
+    color: #69cad7;
+}
+.btn-icon:active {
+    color: #69cad7;
+}

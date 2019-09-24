@@ -1,0 +1,52 @@
+.body-box{
+	background:url(./../../../../assets/roche_bg.jpg);
+	background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.message{
+    margin: 10px;
+    width: fit-content;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2e3d92;
+    font-weight: bold;
+    font-size: 24px; 
+}
+
+.spinner{
+    width: fit-content;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+}
+
+.example-margin {
+    margin: 0 10px;
+  }
+
+  .loader {
+  border: 14px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #2e3d92;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,32 @@
+<!-- <div class="container">
+    <div class="row">
+        <h4 style="margin-left: 2Rem">Delete Assignment</h4>
+        <div style="margin:30px;overflow:hidden">
+            <p>Are you sure to delete Assignment <span style="font-weight: bold"> "{{localData.name}}"</span></p>
+        </div>
+        <div style="margin-bottom: 10px">
+            <button style="background-color: #e0817f;color: white;margin-left: 6Rem" class="form-group" mat-raised-button>Submit</button>
+            <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                (click)="onNoClick()" type="button">Cancel</button>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div style="margin-top: 0px;margin:30px">
+            <p style="font-size: 15px;font-weight: bold;margin-bottom: 20px">Delete Assignment</p>
+            <div class="form-group">
+                <p style="font-size: 14px">Are you sure to delete Assignment <span style="font-weight: bold">
+                        "{{localData.name}}"</span></p>
+            </div>
+            <br>
+            <div>
+                <button style="margin-left: 4.5Rem;background-color: #e0817f;color: white" class="form-group"
+                    mat-raised-button color="warn">Delete</button>
+                <button style="margin-left:2Rem;background-color:#ffae00;color:white;" mat-raised-button
+                    (click)="onNoClick()" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

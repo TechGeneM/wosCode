@@ -1,0 +1,49 @@
+<mat-toolbar style="background-color:#e6e6e6" class="navbar">
+    <div class="userscontainer">
+        <span>
+            <button type="button" mat-icon-button (click)="drawer.toggle()">
+                <i class="material-icons">menu</i>
+            </button>
+        </span>
+        <span>
+            <p><span style="font-weight: 550;padding-right: 0px">WEEKLY SCHEDULE</span>&nbsp;<span style="font-weight: 390">ONLINE</span></p>
+        </span>
+    </div>
+    <div class="userscontainer">
+        <span style="font-size: 15px">
+            {{userName}}
+        </span>
+        <span>
+            <button mat-raised-button (click)="signOut()" matTooltip="LogOut"
+                style="background-color: #404040;cursor: pointer;color: azure;">
+                <i class="material-icons">logout</i>
+            </button>
+        </span>
+    </div>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+        <!-- <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif" routerLink="/kpi"
+            routerLinkActive="active" class="pointer">METRICS</h6>
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif" routerLink="/roster"
+            routerLinkActive="active" class="pointer">ROSTER</h6>
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif" routerLink="/teamsettings"
+            routerLinkActive="active" class="pointer">CONFIGURATION</h6>
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 600" routerLink="/reports"
+            routerLinkActive="active" class="pointer">REPORTS</h6>
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: bold"
+            routerLink="/systemstatistics" routerLinkActive="active" class="pointer">SYSTEM STATISTICS</h6> -->
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif" class="pointer">METRICS</h6>
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif" routerLink="/roster"
+        routerLinkActive="active" class="pointer">ROSTER</h6>
+        <h6 style="color:ivory;font-family: Verdana, Geneva, Tahoma, sans-serif" routerLink="/teamsettings"
+            routerLinkActive="active" class="pointer">CONFIGURATION</h6>
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 600" class="pointer">
+            REPORTS</h6>
+        <h6 style="color: ivory;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: bold" class="pointer">
+            SYSTEM STATISTICS</h6>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

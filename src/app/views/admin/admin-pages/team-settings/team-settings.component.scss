@@ -1,0 +1,68 @@
+.mat-ink-bar{
+    height: 1vh !important;
+    background-color:#e0817f !important;
+}
+.mat-paginator-icon{
+    background-color:#e6e6e6 !important;
+    //color:#e0817f;
+}
+.mat-icon {
+    //width:3vh;
+    font-size: 3vh !important;
+}
+.mat-select-arrow{
+    color:#e0817f !important;
+}
+
+.mat-datepicker-toggle-default-icon {
+    color: #69cad7;
+}
+
+.mat-checkbox-inner-container {
+    width: 2vh !important;
+    height: 2vh !important;
+    margin-right: 0rem !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff !important;
+    background-color: #e0817f;
+}
+
+.nav-link:focus, .nav-link:hover {
+    text-decoration: none;
+}
+
+a {
+    color:grey !important;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+// :host {
+// 	::ng-deep {
+// 		ngb-tabset > .nav-tabs {
+// 			display: none;
+// 		}
+// 	}
+// }
+// .data-view-menu {
+// 	margin-bottom: 32px;
+// 	display: flex;
+// 	.button {
+// 		font-weight: 400;
+// 		font-size: 14px;
+// 		border-radius: 4px;
+// 		background-color: white;
+// 		color: #3D3B56;
+// 		width: 180px;
+// 		text-align: center;
+// 		transition: all 0.2s linear;
+// 		display: inline-block;
+// 		padding: 7px 24px;
+// 		&.active {
+// 			background-color: #5867DD;
+// 			color: white;
+// 		}
+// 	}
+// }

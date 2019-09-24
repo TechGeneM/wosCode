@@ -1,0 +1,94 @@
+table {
+    width: 100%;
+}
+th{
+	font-size :13px;
+	background-color: #e6e6e6;
+    color:  #333333;
+    border-color: #e6e6e6;
+}
+
+mat-header-cell{
+    font-size :13px;
+	background-color: #e6e6e6;
+    color:  #333333;
+    border-color: #e6e6e6;
+}
+button:focus 
+{
+    outline:0;
+}
+
+td.mat-cell {
+    border-bottom-style: none;
+}
+
+th.mat-header-cell{
+    border-bottom-style: none;
+}
+mat-cell{
+    font-size:12px;
+    background-color: #f9f6f2;
+}
+td{
+    font-size:12px;
+    background-color: #f9f6f2;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+  
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: #333333;
+}
+  
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #e6e6e6;
+}
+  
+.example-element-row td {
+    border-bottom-width: 0;
+}
+  
+.example-element-detail {
+    overflow: hidden;
+    /*  display: flex; */
+}
+.example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  
+.example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+  
+.example-element-description {
+    padding: 16px;
+}
+  
+.example-element-description-attribution {
+    opacity: 0.5;
+}
+
+.btn:hover {
+    background-color: #69cad7;
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn-icon:hover {
+    color: #69cad7;
+}
+.btn-icon:active {
+    color: #69cad7;
+}

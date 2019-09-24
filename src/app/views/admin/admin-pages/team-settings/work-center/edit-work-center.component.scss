@@ -1,0 +1,27 @@
+ul {
+  width: 100%;
+}
+ul li {
+  display: inline-block;
+}
+
+ul li > * {
+  width: 100%;
+}
+
+table{
+  width: 100%;
+ // padding-top: 0px;
+ margin-top: 0px;
+ padding-top: 0px
+}
+th{
+	font-size :13px;
+	background-color: #f1f2f7;
+  color: #575962;
+  background-color: #f1f2f7;
+
+}
+td{
+  font-size:13px;
+}

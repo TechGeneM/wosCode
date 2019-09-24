@@ -1,0 +1,35 @@
+<!-- <div class="container">
+    <div class="row">
+        <h4 style="margin-left: 2Rem">Delete Work Center </h4>
+        <div style="margin:30px;overflow:hidden">
+            <p>Are you sure to delete Work Center <span style="font-weight: bold"> "{{localData.workCenterName}}"</span></p>
+        </div>
+        <p style="color:red; text-align: center;">{{referenceMessage}}</p>
+        <div>
+            <button style="background-color: #e0817f;color: white;margin-left: 6Rem" class="form-group" 
+                (click) = "deleteWorkcenter()" mat-raised-button>Submit</button>
+            <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                (click)="onNoClick()" type="button">Cancel</button>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+        <div class="row">
+            <div style="margin-top: 0px;margin:30px">
+                <p style="font-size: 15px;font-weight: bold;margin-bottom: 20px">Delete Work Center</p>
+                <div class="form-group">
+                    <p style="font-size: 14px">Are you sure to delete Work Center <span style="font-weight: bold">"{{localData.workCenterName}}"</span>
+                    </p>
+                </div>
+                <p style="color:red; text-align: center;">{{referenceMessage}}</p>
+                <br>
+                <div>
+                    <button style="margin-left: 5.5Rem;background-color: #e0817f;color: white" class="form-group" (click) = "deleteWorkcenter()" mat-raised-button
+                        color="warn">Delete</button>
+                    <button style="margin-left:2Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>

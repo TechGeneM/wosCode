@@ -1,0 +1,95 @@
+:host {
+	::ng-deep {
+		ngb-tabset > .nav-tabs {
+			display: none;
+		}
+	}
+}
+
+::ng-deep .mat-select-arrow {
+	margin: 0 10px !important;
+}
+::ng-deep .mat-select-value {
+	text-align: center !important;
+	padding-top: 0.5Rem !important;
+    //padding-left: 7Rem !important;
+}
+// ::ng-deep .mat-select-panel {
+// 	max-height: 80vh !important;
+//   }
+
+::ng-deep .mat-select-trigger {
+	height: 2.2Rem
+}
+
+.navbar{
+    justify-content: space-between;
+}
+
+span{
+	float: right
+}
+
+table {
+	width: 100%;
+}
+th{
+	font-size :13px;
+	background-color: #e6e6e6;
+    color:  #333333;
+	/* padding-right: 0.5Rem;
+	padding-left: 0.5Rem; */
+	width: fit-content;
+}
+td{
+	/* padding-left: 0.5Rem;
+	padding-right: 0.5Rem; */
+	font-size:13px;
+	width: fit-content;
+}
+
+button:focus 
+{
+    outline:0 !important;
+}
+
+.btn:hover {
+	background-color: #69cad7;
+	outline: 0 !important;
+}
+
+.btn:focus{
+	outline: 0 !important;
+}
+
+.btn-icon:hover {
+    color: #69cad7;
+}
+.btn-icon:active {
+    color: #69cad7;
+}
+
+mat-form-field{
+    margin-right: 25Rem;
+    width: 200px;
+}
+.data-view-menu {
+	margin-bottom: 32px;
+	display: flex;
+	.button {
+		font-weight: 400;
+		font-size: 14px;
+		border-radius: 4px;
+		background-color: white;
+		color: #3D3B56;
+		width: 180px;
+		text-align: center;
+		transition: all 0.2s linear;
+		display: inline-block;
+		padding: 7px 24px;
+		&.active {
+			background-color: #5867DD;
+			color: white;
+		}
+	}
+}

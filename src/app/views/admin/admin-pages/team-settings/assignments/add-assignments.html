@@ -1,0 +1,131 @@
+<div mat-dialog-content style="margin:20px;margin-bottom: 0px">
+    <p style="font-size: 15px;font-weight: bold" cdkFocusInitial>Add Assignment</p>
+    <form [formGroup]="userAddressValidations" (ngSubmit)="onSubmit(userAddressValidations)">
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label style="font-size: 14px">New Assignment</mat-label>
+                <input matInput formControlName="firstName" style="width:100%">
+                <mat-error *ngIf="userAddressValidations.get('firstName').hasError('required')">
+                    <span style="font-size: 13px">Assignment is required</span>
+                </mat-error>
+                <mat-error *ngIf="userAddressValidations.get('firstName').hasError('pattern')">
+                    <span style="font-size: 13px">Special characters/Numbers are not allowed</span>
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label style="font-size: 14px">Start Date</mat-label>
+                <input formControlName="StartDate" matInput [matDatepickerFilter]="myFilter" [min]="mytime"
+                    (dateChange)="onDateSelection($event.value)" [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+
+                <mat-error *ngIf="userAddressValidations.get('StartDate').hasError('required')">
+                    <span style="font-size: 13px">Start Date is required</span>
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label style="font-size: 14px">End Date</mat-label>
+                <input matInput [min]="minDate" [matDatepickerFilter]="myMinFilter" [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 ></mat-datepicker>
+            </mat-form-field>
+            <!-- <label>Start Date</label>
+        <div class="input-group">
+            <input class="form-control"  [(ngModel)]="newStartDate" formControlName="firstName" placeholder="yyyy-mm-dd"
+                name="dp" ngbDatepicker #d1="ngbDatepicker" (dateSelect)="onDateSelection($event)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button">
+                    <i class="material-icons">calendar_today</i>
+                </button>
+            </div>
+        </div>
+
+        <label>End Date</label>
+        <div class="input-group">
+            <input class="form-control" [(ngModel)]="newEndDate" formControlName="firstName" placeholder="yyyy-mm-dd"
+                name="dp" [minDate]="minDate" ngbDatepicker #d2="ngbDatepicker">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+                    <i class="material-icons">calendar_today</i>
+                </button>
+            </div>
+        </div> -->
+            <br>
+            <mat-label style="font-size: 14px">Category</mat-label>
+            <mat-select formControlName="Category" class="form-control" width="100%">
+                <mat-option value="Uptime">Uptime</mat-option>
+                <mat-option value="Downtime">Downtime</mat-option>
+            </mat-select>
+            <br>
+            <br>
+        </div>
+        <div style="margin-bottom: 0px">
+            <button style="background-color:#e0817f;color:white;" mat-raised-button class="form-group"
+                class="btn">Submit</button>
+
+            <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                (click)="onNoClick()" type="button">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<!-- <div class="container">
+    <div class="row">
+        <h4 style="margin-left: 3Rem">Add Assignment</h4>
+        <div style="margin:40px;overflow:hidden">
+            <form [formGroup]="userAddressValidations" (ngSubmit)="onSubmit(userAddressValidations)">
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>New Assignment</mat-label>
+                        <input matInput formControlName="assignment" style="width:100px">
+                        <mat-error *ngIf="userAddressValidations.get('assignment').hasError('required')">
+                            Assignment is required
+                        </mat-error>
+
+                        <mat-error *ngIf="userAddressValidations.get('assignment').hasError('pattern')">
+                            Special characters/Numbers are not allowed
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <label>Effective Date</label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d1="ngbDatepicker"
+                        (dateSelect)="onDateSelection($event)">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button">
+                            <i class="material-icons">calendar_today</i>
+                        </button>
+                    </div>
+                </div>
+
+                <label>End Date</label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [minDate]="minDate" ngbDatepicker
+                        #d2="ngbDatepicker">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+                            <i class="material-icons">calendar_today</i>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <mat-label>Category</mat-label>
+                <mat-select class="form-control">
+                    <mat-option value="Uptime">Uptime</mat-option>
+                    <mat-option value="Downtime">Downtime</mat-option>
+                </mat-select>
+                <br>
+                <div>
+                    <button style="background-color: #e0817f;color: white" class="form-group" mat-raised-button
+                        color="warn">Submit</button>
+
+                    <button style="margin-left: 3Rem;background-color:#ffae00;color:white;" mat-raised-button
+                        (click)="onNoClick()" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
