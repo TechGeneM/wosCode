@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,7 +13,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UnauthorizedComponent } from './views/auth/unauthorized/unauthorized.component';
 import { SupervisorLayoutComponent } from './views/supervisor/supervisor-layout/supervisor-layout.component';
 import { AgentLayoutComponent } from './views/agent/agent-layout/agent-layout.component';
-
+import { DataTablesModule } from 'angular-datatables';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,10 @@ import { AgentLayoutComponent } from './views/agent/agent-layout/agent-layout.co
     AdminModule,
     MatProgressSpinnerModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DataTablesModule,
+    FullCalendarModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
