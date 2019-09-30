@@ -9,12 +9,37 @@ import { LoginComponent } from './views/auth/login/login.component';
 import { LogoutComponent } from './views/auth/logout/logout.component';
 import { AuthService } from './core/auth/_services/auth.service';
 import { AdminModule } from './views/admin/admin.module';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UnauthorizedComponent } from './views/auth/unauthorized/unauthorized.component';
 import { SupervisorLayoutComponent } from './views/supervisor/supervisor-layout/supervisor-layout.component';
 import { AgentLayoutComponent } from './views/agent/agent-layout/agent-layout.component';
 import { DataTablesModule } from 'angular-datatables';
 import { FullCalendarModule } from '@fullcalendar/angular';
+
+
+import {
+	// MatAutocompleteModule,
+	MatButtonModule,
+	// MatCardModule,
+	// MatCheckboxModule,
+	MatDatepickerModule,
+	// MatDialogModule,
+	// MatIconModule,
+	MatInputModule,
+	MatMenuModule,
+	// MatNativeDateModule,
+	// MatPaginatorModule,
+	MatProgressBarModule,
+	MatProgressSpinnerModule,
+	// MatRadioModule,
+	MatSelectModule,
+	// MatSnackBarModule,
+	// MatSortModule,
+	// MatTableModule,
+	// MatTabsModule,
+	// MatTooltipModule,
+	MatExpansionModule,
+	MatFormFieldModule,
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -35,7 +60,15 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
-    FullCalendarModule
+    FullCalendarModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatExpansionModule,
+    MatProgressBarModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
