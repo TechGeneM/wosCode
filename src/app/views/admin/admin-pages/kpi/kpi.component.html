@@ -17,11 +17,16 @@
         <i class="la la-download"></i> Export
       </button>
 
+      <mat-form-field>
+        <input matInput [matDatepicker]="myDatepicker">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
 
-      <form class="form-inline datepicker-wrapper">
+      <!-- <form class="form-inline datepicker-wrapper">
         <div class="form-group">
           <div class="input-group">
-          <input class="form-control" placeholder="Today: Jan 31" name="dp" [(ngModel)]="model" ngbDatepicker >
+          <input class="form-control" placeholder="Today: Jan 31" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
           <div class="input-group-append">
             <button class="btn btn-primary" (click)="d.toggle()" type="button">
             <i class="la la-angle-down"></i>
@@ -29,7 +34,7 @@
           </div>
           </div>
         </div>
-        </form>
+        </form> -->
 
 
     </div>

@@ -10,7 +10,8 @@ import {
   MatTabsModule,
   MatSelectModule,
   MatTooltipModule,
-  MatTableModule
+  MatTableModule,
+  MatDatepickerModule
 } from '@angular/material';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminPagesModule } from './admin-pages/admin-pages.module';
@@ -30,6 +31,7 @@ import { AdminPagesModule } from './admin-pages/admin-pages.module';
     MatButtonModule,
     MatSelectModule,
     MatTooltipModule,
+    MatDatepickerModule
   ],
   exports: [
     AdminLayoutComponent

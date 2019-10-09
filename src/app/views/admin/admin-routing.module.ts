@@ -21,18 +21,17 @@ const routes: Routes = [
               path: '',
               redirectTo: 'kpi',
               pathMatch: 'full',
-              
           },
           {
               path: 'kpi',
               component: KpiComponent,
               // canActivate: [AuthGuard]
               children: [
-                {
-				    path: '',
-				    redirectTo: 'work-center',
-				    pathMatch: 'full'
-                },
+                  {
+                    path: '',
+                    redirectTo: 'work-center',
+                    pathMatch: 'full'
+                  },
                   {
                       path: 'work-center',
                       component: WorkCenterComponent
@@ -72,7 +71,7 @@ const routes: Routes = [
     exports: [RouterModule],
     declarations: [
         WorkCenterComponent,
-        TeamComponent
+        TeamComponent,
   ]
 })
 export class AdminRoutingModule { }

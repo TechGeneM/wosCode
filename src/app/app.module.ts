@@ -17,28 +17,15 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 
 
 import {
-	// MatAutocompleteModule,
-	MatButtonModule,
-	// MatCardModule,
-	// MatCheckboxModule,
-	MatDatepickerModule,
-	// MatDialogModule,
-	// MatIconModule,
-	MatInputModule,
-	MatMenuModule,
-	// MatNativeDateModule,
-	// MatPaginatorModule,
-	MatProgressBarModule,
-	MatProgressSpinnerModule,
-	// MatRadioModule,
-	MatSelectModule,
-	// MatSnackBarModule,
-	// MatSortModule,
-	// MatTableModule,
-	// MatTabsModule,
-	// MatTooltipModule,
-	MatExpansionModule,
-	MatFormFieldModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatInputModule,
+  MatMenuModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatExpansionModule,
+  MatFormFieldModule,
 } from '@angular/material';
 
 @NgModule({

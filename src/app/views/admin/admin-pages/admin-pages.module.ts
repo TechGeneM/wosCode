@@ -67,7 +67,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [
-    KpiComponent,
+    // KpiComponent,
     RosterComponent,
     TeamSettingsComponent,
     ReportsComponent,
