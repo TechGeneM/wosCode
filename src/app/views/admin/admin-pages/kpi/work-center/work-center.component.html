@@ -1,7 +1,30 @@
 <div class="tableWrapper">
-		<div class="titleRow">
-			<h3>KPI By Work Centers</h3>
+
+	<div class="row">
+		<div class="col-6">
+				<h3>KPI By Work Centers</h3>
 		</div>
+		<div class="col-6">
+				<div class="table-tools">
+
+						<mat-form-field>
+							<input matInput [matDatepicker]="myDatepicker">
+							<mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+							<mat-datepicker #myDatepicker></mat-datepicker>
+						</mat-form-field>
+
+						<button style="float: right;margin-right: 1.5Rem;background-color: #69cad7;color: white"
+                 mat-raised-button>
+                Export
+            </button>
+						
+			
+						
+			
+			
+					</div>
+		</div>
+	</div>
 
 
 		<div class="table-container">

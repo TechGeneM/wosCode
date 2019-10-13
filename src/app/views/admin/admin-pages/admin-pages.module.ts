@@ -1,6 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { KpiComponent } from './kpi/kpi.component';
+import { WorkCenterComponent } from './kpi/work-center/work-center.component';
+import { TeamComponent } from './kpi/team/team.component';
 import { RosterComponent, AddAgent, BulkEditAgent, UpdateEventAgent, AddSupervisor, DeleteAgent, EditAgent } from './roster/roster.component';
 import { TeamSettingsComponent } from './team-settings/team-settings.component';
 import { ReportsComponent } from './reports/reports.component';
@@ -22,6 +24,7 @@ import {
   MatDatepickerModule,
   MatPaginator,
   MatPaginatorModule,
+  MatProgressBarModule,
 } from '@angular/material';
 import { RosterModule } from './roster/roster.module';
 import { ReportsModule } from './reports/reports.module';
@@ -30,6 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     KpiComponent,
+    WorkCenterComponent,
+    TeamComponent,
     RosterComponent,
     TeamSettingsComponent,
     ReportsComponent,
@@ -61,13 +66,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatCardModule,
     MatTooltipModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatProgressBarModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [
-    // KpiComponent,
     RosterComponent,
     TeamSettingsComponent,
     ReportsComponent,

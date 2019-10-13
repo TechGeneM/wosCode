@@ -1,5 +1,13 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-12">
+    <mat-select style="background-color: #FF9492;width: 15Rem; margin-bottom: 40px;">
+      <mat-option value="option1">Option1</mat-option>
+      <mat-option value="option">Option2</mat-option>
+    </mat-select>
+  </div>
+</div>
+<div class="row gray">
+  <div class="col-4">
       <div class="data-view-menu">
           <a [routerLink]="['/kpi/work-center']" class="button" routerLinkActive="active" >
             Work Center
@@ -9,35 +17,64 @@
           </a>
       </div>
   </div>
-  <div class="col-6">
-    <div class="table-tools">
-
-
-      <button class="export-button">
-        <i class="la la-download"></i> Export
-      </button>
-
-      <mat-form-field>
-        <input matInput [matDatepicker]="myDatepicker">
-        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-        <mat-datepicker #myDatepicker></mat-datepicker>
-      </mat-form-field>
-
-      <!-- <form class="form-inline datepicker-wrapper">
-        <div class="form-group">
-          <div class="input-group">
-          <input class="form-control" placeholder="Today: Jan 31" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-primary" (click)="d.toggle()" type="button">
-            <i class="la la-angle-down"></i>
-            </button>
+  <div class="col-4">
+    <div class="stats">
+      <div class="stat">
+        <span class="value">100%</span>
+        <span class="title">Utilization</span>
+        <mat-progress-bar
+          [mode]="determinate"
+          [value]="100"
+          >
+      </mat-progress-bar>
+      </div>
+      <div class="stat">
+        <span class="value">90%</span>
+        <span class="title">Capacity Used</span>
+        <mat-progress-bar
+        [mode]="determinate"
+        [value]="90"
+        >
+      </mat-progress-bar>
+      </div>
+      <div class="stat">
+        <span class="value">65%</span>
+        <span class="title">Attendance</span>
+        <mat-progress-bar
+        color="warn"
+        [mode]="determinate"
+        [value]="65"
+        ></mat-progress-bar>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+      <div class="user-stats">
+          <div class="stat">
+            <div class="label">
+              Work Centers
+            </div>
+            <div class="value">
+              03
+            </div>
           </div>
+          <div class="stat">
+            <div class="label">
+              Supervisors
+            </div>
+            <div class="value">
+              10
+            </div>
+          </div>
+          <div class="stat">
+            <div class="label">
+              Agents
+            </div>
+            <div class="value">
+              50
+            </div>
           </div>
         </div>
-        </form> -->
-
-
-    </div>
   </div>
 </div>
 

@@ -11,7 +11,8 @@ import {
   MatSelectModule,
   MatTooltipModule,
   MatTableModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminPagesModule } from './admin-pages/admin-pages.module';
@@ -31,7 +32,8 @@ import { AdminPagesModule } from './admin-pages/admin-pages.module';
     MatButtonModule,
     MatSelectModule,
     MatTooltipModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatProgressBarModule
   ],
   exports: [
     AdminLayoutComponent
