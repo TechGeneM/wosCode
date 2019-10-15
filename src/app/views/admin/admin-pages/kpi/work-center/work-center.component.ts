@@ -22,7 +22,7 @@ function formatInnerTable(tableId) {
     <div class="row">
       <div class="col-9">
         <div class="tabs-selector" id="tabs_${tableId}">
-          <div class="tab" data-target="#tableTab_week_${tableId}">Weekly Report</div>
+          <div class="tab" data-target="#tableTab_week_${tableId}">By Week</div>
           <div class="tab" data-target="#tableTab_team_${tableId}">By Team</div>
           <div class="tab" data-target="#tableTab_location_${tableId}">By Location</div>
           <div class="tab" data-target="#tableTab_pod_${tableId}">By Pod</div>
@@ -261,7 +261,7 @@ export class WorkCenterComponent implements OnInit {
       }
     },
     {
-      id: 2,
+      id: 1,
       workCenter: 'Influenza IC',
       rosterHC: '10',
       capacityUsed: {
@@ -434,8 +434,183 @@ export class WorkCenterComponent implements OnInit {
           rotation: '04'
         }]
       }
-    }
-  ]
+    },
+    {
+      id: 2,
+      workCenter: 'Influenza RS',
+      rosterHC: '10',
+      capacityUsed: {
+        value: '100%',
+        status: 'good'
+      },
+      capacity: {
+        value: '70',
+        status: 'bad'
+      },
+      throughputPlan: {
+        value: '60 IFM',
+        status: 'good'
+      },
+      utilization: {
+        value: '96%',
+        status: 'bad'
+      },
+      attendance: {
+        value: '100%',
+        status: 'good'
+      },
+      uptime: {
+        value: '50',
+        status: 'good'
+      },
+      overtime: {
+        value: '4',
+        status: 'bad'
+      },
+      innerData: {
+        weekly: [{
+          date: 'Monday, August 12, 2019',
+          rosterHC: '10',
+          capacityUsed: {
+            value: '100%',
+            status: 'good'
+          },
+          throughputPlan: {
+            value: '60 ACT',
+            status: 'good'
+          },
+          utilization: {
+            value: '100%',
+            status: 'good'
+          },
+          attendance: {
+            value: '100%',
+            status: 'good'
+          },
+          uptime: {
+            value: '50',
+            status: 'good'
+          },
+          overtime: {
+            value: '4',
+            status: 'bad'
+          }
+        }],
+        team: [{
+          team: 'PDX_Sup_01',
+          supervisor: 'Michael Scott',
+          rosterHC: '10',
+          capacityUsed: {
+            value: '100%',
+            status: 'good'
+          },
+          capacity: {
+            value: '90',
+            status: 'good'
+          },
+          throughputPlan: {
+            value: '60 ACT',
+            status: 'good'
+          },
+          utilization: {
+            value: '100%',
+            status: 'good'
+          },
+          attendance: {
+            value: '100%',
+            status: 'good'
+          },
+          uptime: {
+            value: '50',
+            status: 'good'
+          },
+          overtime: {
+            value: '4',
+            status: 'bad'
+          }
+        }],
+        location: [{
+          location: 'PDX',
+          rosterHC: '10',
+          capacityUsed: {
+            value: '100%',
+            status: 'good'
+          },
+          capacity: {
+            value: '90',
+            status: 'good'
+          },
+          throughputPlan: {
+            value: '60 ACT',
+            status: 'good'
+          },
+          utilization: {
+            value: '100%',
+            status: 'good'
+          },
+          attendance: {
+            value: '100%',
+            status: 'good'
+          },
+          uptime: {
+            value: '50',
+            status: 'good'
+          },
+          overtime: {
+            value: '4',
+            status: 'bad'
+          }
+        }],
+        pod: [{
+          pod: 'Pod 01',
+          rosterHC: '10',
+          capacityUsed: {
+            value: '100%',
+            status: 'good'
+          },
+          capacity: {
+            value: '90',
+            status: 'good'
+          },
+          throughputPlan: {
+            value: '60 ACT',
+            status: 'good'
+          },
+          utilization: {
+            value: '100%',
+            status: 'good'
+          },
+          attendance: {
+            value: '100%',
+            status: 'good'
+          },
+          uptime: {
+            value: '50',
+            status: 'good'
+          },
+          overtime: {
+            value: '4',
+            status: 'bad'
+          }
+        }],
+        time: [{
+          team: 'PDX_Sup_01',
+          supervisor: 'Michael Scott',
+          uptime: '04',
+          break: '04',
+          lunch: '04',
+          meeting: '04',
+          training: '04',
+          nonProd: '04',
+          engagement: '04',
+          absencePlanned: '04',
+          absenceUnplanned: '04',
+          staffPool: '04',
+          rotation: '04'
+        }]
+      }
+    },
+  ];
 
   ngOnInit(): void {
     let innerTableCounter = 1;
@@ -496,13 +671,13 @@ export class WorkCenterComponent implements OnInit {
             return statusRender(data);
           }
         }, {
-          title: 'Uptime',
+          title: 'Uptime (Hrs)',
           data: 'uptime',
           render(data) {
             return statusRender(data);
           }
         }, {
-          title: 'Overtime',
+          title: 'OT (Hrs)',
           data: 'overtime',
           render(data) {
             return statusRender(data);

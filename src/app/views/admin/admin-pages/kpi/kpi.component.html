@@ -1,13 +1,59 @@
 <div class="row">
-  <div class="col-12">
-    <mat-select style="background-color: #FF9492;width: 15Rem; margin-bottom: 40px;">
-      <mat-option value="option1">Option1</mat-option>
+  <div class="col-12 col-md-8">
+    <mat-select style="background-color: #69CAD7;width: 15Rem; margin-bottom: 40px;" value="option1">
+      <mat-option value="option1" selected>Influenza</mat-option>
       <mat-option value="option">Option2</mat-option>
     </mat-select>
+    <div class="date-control">
+      <span class="current-date">Oct 14, 2019</span>
+
+      <button mat-raised-button>
+        <i class="material-icons">
+          arrow_left
+        </i>
+      </button>
+      <button mat-raised-button>
+        <i class="material-icons">
+          arrow_right
+        </i>
+      </button>
+    </div>
+    
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="stats">
+      <div class="stat">
+        <span class="value">100%</span>
+        <span class="title">Utilization</span>
+        <mat-progress-bar
+          mode="determinate"
+          value="100"
+          >
+      </mat-progress-bar>
+      </div>
+      <div class="stat">
+        <span class="value">90%</span>
+        <span class="title">Capacity Used</span>
+        <mat-progress-bar
+        mode="determinate"
+        value="90"
+        >
+      </mat-progress-bar>
+      </div>
+      <div class="stat">
+        <span class="value">65%</span>
+        <span class="title">Attendance</span>
+        <mat-progress-bar
+        color="warn"
+        mode="determinate"
+        value="65"
+        ></mat-progress-bar>
+      </div>
+    </div>
   </div>
 </div>
 <div class="row gray">
-  <div class="col-4">
+  <div class="col-12 col-md-8">
       <div class="data-view-menu">
           <a [routerLink]="['/kpi/work-center']" class="button" routerLinkActive="active" >
             Work Center
@@ -17,42 +63,11 @@
           </a>
       </div>
   </div>
-  <div class="col-4">
-    <div class="stats">
-      <div class="stat">
-        <span class="value">100%</span>
-        <span class="title">Utilization</span>
-        <mat-progress-bar
-          [mode]="determinate"
-          [value]="100"
-          >
-      </mat-progress-bar>
-      </div>
-      <div class="stat">
-        <span class="value">90%</span>
-        <span class="title">Capacity Used</span>
-        <mat-progress-bar
-        [mode]="determinate"
-        [value]="90"
-        >
-      </mat-progress-bar>
-      </div>
-      <div class="stat">
-        <span class="value">65%</span>
-        <span class="title">Attendance</span>
-        <mat-progress-bar
-        color="warn"
-        [mode]="determinate"
-        [value]="65"
-        ></mat-progress-bar>
-      </div>
-    </div>
-  </div>
-  <div class="col-4">
+  <div class="col-12 col-md-4">
       <div class="user-stats">
           <div class="stat">
             <div class="label">
-              Work Centers
+              Work Centers:
             </div>
             <div class="value">
               03
@@ -60,7 +75,7 @@
           </div>
           <div class="stat">
             <div class="label">
-              Supervisors
+              Supervisors:
             </div>
             <div class="value">
               10
@@ -68,7 +83,7 @@
           </div>
           <div class="stat">
             <div class="label">
-              Agents
+              Agents:
             </div>
             <div class="value">
               50

@@ -5,19 +5,18 @@
 				</div>
 				<div class="col-6">
 						<div class="table-tools">
+								<button
+										 mat-button>
+										<i class="material-icons">
+											search
+										</i>
+								</button>
 		
-							<mat-form-field>
-								<input matInput [matDatepicker]="myDatepicker">
-								<mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-								<mat-datepicker #myDatepicker></mat-datepicker>
-							</mat-form-field>
-	
-							<button style="float: right;margin-right: 1.5Rem;background-color: #69cad7;color: white"
-									 mat-raised-button>
-									Export
-							</button>
-					
-					
+								<button class="export"
+										 mat-raised-button>
+										Export
+								</button>
+								
 							</div>
 				</div>
 			</div>

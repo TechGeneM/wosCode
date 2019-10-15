@@ -5,7 +5,14 @@ const now = new Date();
 declare var $;
 
 function statusRender(data) {
-  return '<div class="status ' + data.status + '"></div>' + data.value;
+  let html = '';
+  if (data.status === 'good') {
+    html = '<i class="material-icons status ' + data.status + '">arrow_drop_up</i>' + data.value;
+  } else {
+    html = '<i class="material-icons status ' + data.status + '">arrow_drop_down</i>' + data.value;
+  }
+
+  return html;
 }
 
 
@@ -15,7 +22,7 @@ function formatInnerTable(tableId) {
     <div class="row">
       <div class="col-9">
         <div class="tabs-selector" id="tabs_${tableId}">
-          <div class="tab" data-target="#tableTab_week_${tableId}">Weekly Report</div>
+          <div class="tab" data-target="#tableTab_week_${tableId}">By Week</div>
           <div class="tab" data-target="#tableTab_team_${tableId}">By Team</div>
           <div class="tab" data-target="#tableTab_location_${tableId}">By Location</div>
           <div class="tab" data-target="#tableTab_pod_${tableId}">By Pod</div>
@@ -488,13 +495,13 @@ export class TeamComponent implements OnInit {
             return statusRender(data);
           }
         }, {
-          title: 'Uptime',
+          title: 'Uptime (Hrs)',
           data: 'uptime',
           render(data) {
             return statusRender(data);
           }
         }, {
-          title: 'Overtime',
+          title: 'OT (Hrs)',
           data: 'overtime',
           render(data) {
             return statusRender(data);

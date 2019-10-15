@@ -3,15 +3,68 @@
 		ngb-tabset > .nav-tabs {
 			display: none;
 		}
+		color: #434343;
+
+		button:focus {
+			outline: none;
+		}
 
 		.row.gray {
 			background-color: #E4E4E4;
+			margin: 0;
+			[class^="col"] {
+				padding: 0;
+			}
+		}
+
+		.date-control {
+			display: inline-block;
+			margin: 0px 24px;
+			span.current-date {
+				margin-right: 12px;
+			}
+			button {
+				background-color: #69CAD7;
+				padding: 0px 0px;
+				min-width: 40px;
+				margin: 0px 4px;
+			}
+		}
+
+		.mat-progress-bar {
+			.mat-progress-bar-fill::after {
+				background-color: #98DFCC;
+			}
+		
+		 .mat-progress-bar-buffer {
+				background: #E4E4E4;
+			}
+
+			&.mat-warn {
+				.mat-progress-bar-fill::after {
+					background-color: #E98494;
+				}
+			
+			 .mat-progress-bar-buffer {
+					background: #E4E4E4;
+				}
+			}
+
+		}
+
+		.mat-select-value {
+			padding-top: 0.5Rem !important;
+			padding-left: 0.5Rem;
+		}
+		.mat-select-trigger {
+			padding-right: 0.5Rem;
 		}
 
 		.data-view-menu {
 			
 			display: flex;
 			.button {
+				white-space: nowrap;
 				background-color: transparent;
 				height: 60px;
 				width: 175px;
@@ -23,7 +76,7 @@
 				text-align: center;
 				&.active {
 					background-color: #FF9492;
-					color: white;
+					// color: white;
 				}
 			}
 		}
@@ -31,8 +84,17 @@
 
 		.table-tools {
 			float: right;
-			// display: flex;
+			display: flex;
+			height: 100%;
+			align-items: center;
+			button {
+				margin-left: 1.5Rem;
 
+				&.export {
+					background-color: #69cad7;
+					color: white;
+				}
+			}
 
 
 			.datepicker-wrapper {
@@ -148,14 +210,11 @@
 				font-size: 18px;
 				color: #575962;
 				font-weight: 500;
-				margin: 15px 15px;
+				margin: 26px 16px;
 			}
 			
 		}
 		
-		.table-container {
-			// padding: 30px;
-		}
 		
 		
 		
@@ -169,7 +228,7 @@
 		}
 		
 		.dataTables_wrapper .dataTable {
-			
+			margin: 0px !important;
 			border-bottom: none !important;
 			thead {
 				th {
@@ -191,6 +250,10 @@
 				line-height: 21px;
 				font-weight: 400;
 				white-space: nowrap;
+
+				&.child-row {
+					padding: 0px;
+				}
 			}
 		
 		
@@ -200,13 +263,14 @@
 				tr {
 		
 					&.odd {
-						background-color: #fff;
+						background-color: #F9F6F2;
 					}
 					&.even {
-						background-color: #fff;
+						background-color: #F9F6F2;
 					}
 		
 					&.child-row {
+						padding: 0px;
 						background-color: #fff;
 						&:hover {
 							background-color: #fff;
@@ -221,9 +285,10 @@
 			.details-control {
 				max-width: 30px;
 				cursor: pointer;
+				user-select: none;
 				i {
-					color: #FF9492;
-					font-size: 24px;
+					color: #69CAD7;
+					font-size: 28px;
 					vertical-align: middle;
 					line-height: 8px;
 					transition: transform 0.3s ease-out;
@@ -258,6 +323,29 @@
 				position: relative;
 				table {
 					padding: 0;
+					thead {
+
+						th {
+							background-color: white;
+							padding: 12px;
+							border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+							border-top: 1px solid rgba(151, 151, 151, 0.1);
+						}
+					}
+					tbody {
+						tr {
+							td, .sorting_1 {
+								background-color: white;
+							}
+							&:hover {
+								td, .sorting_1 {
+									background-color: rgba(255,148,146,0.35);
+								}
+							}
+						}
+					}
+
+					
 				}
 		
 				.dt-buttons {
@@ -328,8 +416,8 @@
 					background-color: #EEF0F1;
 					margin-right: 12px;
 					&.active {
-						background: #FF9492;
-						color: white;
+						background: #69CAD7;
+						// color: white;
 					}
 				}
 			}
@@ -348,8 +436,7 @@
 			.label {
 				color: #575962;
 				font-size: 14px;
-				font-weight: 500;
-				margin-right: 20px;
+				margin-right: 4px;
 				display: inline-block;
 			}
 	
@@ -357,27 +444,24 @@
 				color: #575962;
 				// background-color: #00C5DC;
 				// border-radius: 20px;
-				font-size: 16px;
-				font-weight: 500;
+				font-size: 14px;
+				font-weight: bold;
 				// text-align: center;
 				display: inline-block;
 				// padding: 2px 26px;
 				display: inline-block;
-				margin-right: 20px;
+				margin-right: 24px;
 			}
 		}
 
 		.stats {
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
 
       .stat {
         padding: 12px;
         width: 100%;
         max-width: 120px;
-
-
-        border-right: 1px solid #ebedf2;
 
         &:last-child {
           border-right: none;
@@ -385,15 +469,15 @@
 
         .value {
           font-weight: 600;
-          font-size: 15px;
-          line-height: 10px;
+          font-size: 18px;
+          line-height: 18px;
           display: block;
         }
         .title {
           font-weight: 400;
           font-size: 12px;
-          line-height: 10px;
-          margin-bottom: 8px;
+          line-height: 17px;
+          margin-bottom: 4px;
         }
       }
 

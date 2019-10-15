@@ -467,7 +467,7 @@ border-color: transparent;
     .mat-expansion-panel-header {
       padding: 0px 32px;
       position: relative;
-      height: 32px;
+      height: 32px !important;
       border-top: 1px solid #ebedf2;
       user-select: none;
 
